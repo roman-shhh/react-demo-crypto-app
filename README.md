@@ -11,6 +11,8 @@
 
 React Demo Crypto App
 
+[Live demo](https://roman-shhh.github.io/react-demo-crypto-app/index.html)
+
 ### Built With
 
 [React](https://react.dev)
