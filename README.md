@@ -11,7 +11,9 @@
 
 React Demo Crypto App
 
-[Live demo](https://roman-shhh.github.io/react-demo-crypto-app/index.html)
+<img width="500" alt="shreenshot" src="https://github.com/roman-shhh/react-demo-crypto-app/assets/55157344/e4c4bd0f-c143-4070-a001-946839fc744d">
+
+[Live demo](https://roman-shhh.github.io/react-demo-crypto-app/)
 
 ### Built With
 
