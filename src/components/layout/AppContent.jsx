@@ -1,7 +1,9 @@
 import { Layout, Typography } from 'antd';
 import { useCrypto } from '../../context/crypto-context';
-import PortfolioChart from '../PortfolioChart';
-import AssetsTabls from '../AssetsTabls';
+import { Suspense, lazy } from 'react';
+
+const PortfolioChart = lazy(() => import('../PortfolioChart'));
+const AssetsTable = lazy(() => import('../AssetsTable'));
 
 const contentStyle = {
   textAlign: 'center',
@@ -21,14 +23,20 @@ export default function AppContent() {
 
   return (
     <Layout.Content style={contentStyle}>
-      <Typography.Title level={3} style={{ textAlign: 'left', color: '#fff'}}>Portfolio: {
-        assets
-          .map(asset => asset.amount * cryptoPriceMap[asset.id])
-          .reduce((acc, v) => (acc += v), 0)
-          .toFixed(2)}$
-        </Typography.Title>
+      <Typography.Title level={3} style={{ textAlign: 'left', color: '#fff'}}>
+        Portfolio: {
+          assets
+            .map(asset => asset.amount * cryptoPriceMap[asset.id])
+            .reduce((acc, v) => (acc += v), 0)
+            .toFixed(2)
+        }$
+      </Typography.Title>
+      <Suspense fallback={null}>
         <PortfolioChart />
-        <AssetsTabls />
+      </Suspense>
+      <Suspense fallback={null}>
+        <AssetsTable />
+      </Suspense>
     </Layout.Content>
   )
 }
