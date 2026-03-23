@@ -15,15 +15,6 @@ const headerStyle = {
   alignItems: 'enter',
 };
 
-const options = [
-  {
-    label: 'china',
-    value: 'China',
-    emoji: 'Q',
-    desc: 'China (China)',
-  }
-]
-
 export default function AppHeader() {
   const [select, setSelect] = useState(false)
   const [modal, setModal] = useState(false)
@@ -75,7 +66,7 @@ export default function AppHeader() {
       </Suspense>
 
       <Suspense fallback={null}>
-        <Drawer title="Add Asset" width={600} onClose={() => setDrawer(false)} open={drawer} destroyOnClose>
+        <Drawer title="Add Asset" size={600} onClose={() => setDrawer(false)} open={drawer} destroyOnHidden>
           <AddAssetForm onClose={() => setDrawer(false)} />
         </Drawer>
       </Suspense>

@@ -49,6 +49,7 @@ export function CryptoContextProvider({ children }) {
 
 export default CryptoContext
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useCrypto() {
   return useContext(CryptoContext)
 }
